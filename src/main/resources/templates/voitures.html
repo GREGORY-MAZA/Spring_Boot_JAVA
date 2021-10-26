@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<tr th:each="TOTO: ${voitures}">
+    <td th:text="${TOTO.id}" />
+    <td th:text="${TOTO.model}" />
+    <td th:text="${TOTO.marque}" />
+    <td th:text="${TOTO.prix}" />    <br>
+</tr>
+</body>
+</html>
