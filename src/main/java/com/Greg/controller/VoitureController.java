@@ -12,6 +12,9 @@ import java.util.List;
 @Controller
 public class VoitureController {
 
+    //variable de type VoitureDao, que nous avons annotée avec @Autowired afin que Spring se charge d'en fabriquer une instance
+    //VoitureDao a désormais accès à toutes les méthodes que nous avons définies.
+
     @Autowired
     private VoitureDao voitureDao;
 
@@ -25,6 +28,13 @@ public class VoitureController {
     }
 
     // ------------- Récupérer une voiture par rapport à son ID -------------
+
+    //    L'utilisateur envoie une requête GET vers /Voitures/20
+    //    Le dispatcheur cherche dans votre contrôleur la méthode qui répond au pattern "/Voitures/{id}" et l'exécute
+    //    La méthode (dans ce cas listeVoitures ) fait appel au DAO pour qu'il communique avec la base de données
+    //    Il récupère les informations sur le produit puis il crée une instance de Voiture qu'il renvoie ensuite à votre méthode.
+
+
 
     //route
     @GetMapping(value = "Voitures/{id}")
@@ -45,8 +55,8 @@ public class VoitureController {
     // ------------- Ajouter une voiture -------------
 
     //ajouter un produit
-    @PostMapping(value = "/Produits")
-    public void ajouterProduit(@RequestBody Voiture voiture) {
+    @PostMapping(value = "/Voitures")
+    public void ajouterVoiture(@RequestBody Voiture voiture) {
         voitureDao.save(voiture);
     }
 
