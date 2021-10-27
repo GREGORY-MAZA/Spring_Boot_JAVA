@@ -9,9 +9,9 @@ import java.util.List;
 @Repository
 public class VoitureDaoImpl implements VoitureDao {
 
-    public static List<Voiture> voitures = new ArrayList<>();
+    public List<Voiture> voitures = new ArrayList<>();
 
-    static {
+    public VoitureDaoImpl() {
 
         voitures.add(new Voiture(20, "Mustang", "FORD", "rouge", 98000));
         voitures.add(new Voiture(5, "BUGATTI", "Divo", "noir", 239000));
@@ -40,5 +40,6 @@ public class VoitureDaoImpl implements VoitureDao {
     @Override
     public Voiture save(Voiture voiture) {
         return null;
+        //TODO Ajouter dans la liste les infos récupérer
     }
 }

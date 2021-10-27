@@ -9,7 +9,7 @@ public class PersonController {
 
     @GetMapping
     String getPeople(Model model) {
-        model.addAttribute("something", "La calotte de ses morts");
+        model.addAttribute("something", "Salut je suis le PersonController");
         return "people";
     }
 

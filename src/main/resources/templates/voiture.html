@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+<img src="http://www.prestige-car-location.com/wp-content/uploads/2014/10/Logo-Prestige-Car-Location-HD1.png">
+<a href="/Voitures"> < Liste des voitures</a> <br><br><br>
 <tr >
-    <td th:text="${Car.marque}" />
-    <td th:text="${Car.model}" />
-    <br>
+    <p>Marque : <td th:text="${Car.marque}" /> </p>
+    <p>Model : <td th:text="${Car.model}" /> </p>
+    <p>Couleur : <td th:text="${Car.couleur}" /> </p>
+    <p>Tarif : <td th:text="${Car.prix}" /> €</p>
 </tr>
 </body>
 </html>

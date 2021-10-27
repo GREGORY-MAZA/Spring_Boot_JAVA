@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
 </head>
 <body>
+<img src="http://www.prestige-car-location.com/wp-content/uploads/2014/10/Logo-Prestige-Car-Location-HD1.png"><br>
 <tr th:each="TOTO: ${voitures}">
     <td th:text="${TOTO.id}" />
     <td th:text="${TOTO.model}" />
     <td th:text="${TOTO.marque}" />
-    <td th:text="${TOTO.prix}" />    <br>
+    <td th:text="${TOTO.prix}" />
+    <a  th:href="@{'/Voitures/' + ${TOTO.id}}"> Choisir </a>
+    <br>
 </tr>
 </body>
 </html>

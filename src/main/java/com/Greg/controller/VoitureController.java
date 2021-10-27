@@ -17,11 +17,10 @@ public class VoitureController {
 
     // ------------- Récupérer la liste des Voitures -------------
 
-    @GetMapping(value = "Voitures")
+    @GetMapping(value = "/Voitures")
     public String listeVoitures(Model model) {
-
         model.addAttribute("voitures", voitureDao.voitureFindAll());
-        return "voiture";
+        return "voitures";
 
     }
 
@@ -50,6 +49,7 @@ public class VoitureController {
     public void ajouterProduit(@RequestBody Voiture voiture) {
         voitureDao.save(voiture);
     }
+
 //--------------------------------END--------------------------------------
 }
 
