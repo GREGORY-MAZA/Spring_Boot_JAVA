@@ -7,8 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @Controller
 public class VoitureController {
 
@@ -56,8 +54,18 @@ public class VoitureController {
 
     //ajouter un produit
     @PostMapping(value = "/Voitures")
-    public void ajouterVoiture(@RequestBody Voiture voiture) {
+    public String ajouterVoiture(@RequestBody Voiture voiture) {
         voitureDao.save(voiture);
+        return "redirect:/Voitures";
+
+    }
+
+    // ------------- Supprimer une voiture -------------
+
+    @GetMapping(value = "/Voitures/delete/{id}")
+    public String DeleteVoitureId(Model model,@PathVariable("id")int id){
+        voitureDao.deleteByIdCar(id);
+        return "redirect:/Voitures";
     }
 
 //--------------------------------END--------------------------------------

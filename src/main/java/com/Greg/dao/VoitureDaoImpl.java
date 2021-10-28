@@ -41,6 +41,16 @@ public class VoitureDaoImpl implements VoitureDao {
     public Voiture save(Voiture voiture) {
         voitures.add(voiture);
         return voiture; //ajoute le produit reçu à notre liste.
-        //TODO Ajouter dans la liste les infos récupérer
+    }
+
+    @Override
+    public Voiture deleteByIdCar(int id) {
+        for (Voiture voiture : voitures) {
+            voitures.remove(voiture);
+            if (voiture.getId() == id) {
+                return voiture; //vérifie s'il y a un produit avec l'id donnée dans notre liste de produits et le renvoie en cas de correspondance
+            }
+        }
+        return null;
     }
 }

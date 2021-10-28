@@ -10,6 +10,10 @@ public class Voiture {
 
     //-------------------------------- CONSTRUCTOR ----------------------------------
 
+
+    public Voiture() {
+    }
+
     public Voiture(int id, String model, String marque, String couleur, int prix) {
         this.id = id;
         this.model = model;

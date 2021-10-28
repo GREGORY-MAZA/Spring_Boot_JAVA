@@ -1,12 +1,13 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
     <title>Add Person</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
 </head>
 <body>
-<h1>Create a Person:</h1>
+<a href="/Voitures"> < Liste des voitures</a> <br><br><br>
+<h1>Ajouter une voiture</h1>
 
 <!--
    In Thymeleaf the equivalent of
@@ -14,15 +15,24 @@
    would be @{/edit.html}
    -->
 
-<form th:action="@{/addPerson}"
-      th:object="${personForm}" method="POST">
-    First Name:
-    <input type="text" th:field="*{firstName}" />
+<form th:action="@{/addVoiture}"
+      th:object="${voitureForm}" method="POST">
+    Id:
+    <input type="text" th:field="*{id}" />
     <br/>
-    Last Name:
-    <input type="text" th:field="*{lastName}" />
+    Marque:
+    <input type="text" th:field="*{marqueName}" />
     <br/>
-    <input type="submit" value="Create" />
+    Modele:
+    <input type="text" th:field="*{modelName}" />
+    <br/>
+    Couleur:
+    <input type="text" th:field="*{colorName}" />
+    <br/>
+    Prix:
+    <input type="text" th:field="*{price}" />
+    <br/>
+    <input type="submit" value="Ajouter" />
 </form>
 
 <br/>

@@ -8,6 +8,7 @@ public interface VoitureDao {
     public List<Voiture> voitureFindAll();
     public Voiture findByIdCar(int id);
     public Voiture save(Voiture voiture);
+    public Voiture deleteByIdCar(int id);
 
 
 }
